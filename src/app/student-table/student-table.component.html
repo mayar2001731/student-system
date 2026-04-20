@@ -1,0 +1,68 @@
+
+<div class="container mt-4">
+
+  <table class="table table-striped table-bordered table-hover text-center align-middle">
+
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th>GPA</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- ngfor repeat this line for each student -->
+      <tr *ngFor="let s of students">
+
+        <td>{{ s.id }}</td>
+
+        <td>
+          {{ s.firstName }} {{ s.lastName }}
+        </td>
+
+        <td>{{ s.age }}</td>
+
+        <td>
+          <span class="badge bg-primary">
+            {{ s.department }}
+          </span>
+        </td>
+
+        <td>
+          <span 
+            class="badge"
+            [ngClass]="{
+              'bg-success': s.GPA >= 3,
+              'bg-warning': s.GPA >= 2 && s.GPA < 3,
+              'bg-danger': s.GPA < 2
+            }"
+          >
+            {{ s.GPA }}
+          </span>
+        </td>
+
+        <td>
+          <!--buttons for firing actions-->
+          <button 
+            class="btn btn-info btn-sm me-2"
+            (click)="view(s.id)">
+            View
+          </button>
+
+          <button 
+            class="btn btn-danger btn-sm"
+            (click)="delete(s.id)">
+            Delete
+          </button>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

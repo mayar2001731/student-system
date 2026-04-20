@@ -1,0 +1,6 @@
+<h2>Students</h2>
+<!--send data from parent component (student) to child component table-->
+<app-student-table
+  [students]="students"
+  (deleteStudent)="delete($event)">
+</app-student-table>

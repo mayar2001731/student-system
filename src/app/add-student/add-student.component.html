@@ -1,0 +1,16 @@
+<h2>Add Student</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <input formControlName="id" placeholder="ID"><br>
+  <input formControlName="firstName" placeholder="First Name"><br>
+  <input formControlName="lastName" placeholder="Last Name"><br>
+  <input formControlName="age" placeholder="Age"><br>
+  <input formControlName="email" placeholder="Email"><br>
+  <input formControlName="phone" placeholder="Phone"><br>
+  <input formControlName="department" placeholder="Department"><br>
+  <input formControlName="GPA" placeholder="GPA"><br>
+
+  <button type="submit">Add</button>
+
+</form>
